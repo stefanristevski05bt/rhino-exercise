@@ -11,7 +11,7 @@ export default function NotesPage() {
     const { t } = useTranslation();
 
     const fetchNotes = async () => {
-        const data = await getNotes();
+        const data = await getNotes(t);
         if (data) setNotes(data);
     }
 
@@ -20,12 +20,12 @@ export default function NotesPage() {
     }, [])
 
     const handleSubmit = async (note) => {
-        const result = await saveNote(note);
+        const result = await saveNote(note, t);
         if (result) fetchNotes();
     }
 
     const handleRemove = async (id) => {
-        const result = await removeNote(id);
+        const result = await removeNote(id, t);
         if (result) fetchNotes();
     }
 
@@ -53,6 +53,7 @@ export default function NotesPage() {
                             {
                                 notes.map(note =>
                                     <Note
+                                        key={note.id}
                                         note={note}
                                         onNoteClick={onNoteClick} />
                                 )

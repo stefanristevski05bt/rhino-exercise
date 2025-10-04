@@ -1,9 +1,7 @@
 import axios from 'axios';
 import { apiUrl } from './../constants';
-import { useTranslation } from 'react-i18next';
-const { t } = useTranslation();
 
-export const getNotes = async () => {
+export const getNotes = async (t) => {
     try {
         const result = await axios.get(`${apiUrl}/note`)
         return result.data;
@@ -13,7 +11,7 @@ export const getNotes = async () => {
     }
 }
 
-export const saveNote = async (note) => {
+export const saveNote = async (note, t) => {
     try {
         const result = await axios.post(`${apiUrl}/note`, note);
         return result.data;
@@ -23,7 +21,7 @@ export const saveNote = async (note) => {
     }
 };
 
-export const removeNote = async (id) => {
+export const removeNote = async (id, t) => {
     try {
         const result = await axios.delete(`${apiUrl}/note/${id}`);
         return result.data;

@@ -20,6 +20,8 @@ export default function EditNote({ note, onSave, handleEdit, onRemove }) {
         handleEdit();
     }
 
+    const enableSubmit = note ? note.title !== title || note.text !== text : false;
+
     return (
         <div className="edit-note-container">
             <input
@@ -32,7 +34,7 @@ export default function EditNote({ note, onSave, handleEdit, onRemove }) {
                 onChange={e => setText(e.target.value)}
             />
             <div className="button-group">
-                <button className="button button-submit" onClick={handleSave}>{t('submit')}</button>
+                {enableSubmit && <button className="button button-submit" onClick={handleSave}>{t('submit')}</button>}
                 <button className="button button-cancel" onClick={handleEdit}>{t('cancel')}</button>
                 {note &&
                     <button className="button button-cancel" onClick={handleRemove}>{t('remove')}</button>
