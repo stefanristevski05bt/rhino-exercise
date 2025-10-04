@@ -13,3 +13,8 @@ export function absolute3() {
     const number = -10;
     console.log(Math.sqrt(number * number));
 }
+
+export unction absolute4(){
+    const number = -10;
+    return Math.max(number, -number);
+}
