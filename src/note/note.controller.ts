@@ -1,14 +1,17 @@
-import { Body, Controller, Delete, Get, Param, Post } from '@nestjs/common';
-import { NoteService } from './note.service';
+import { Body, Controller, Delete, Get, Inject, Param, Post } from '@nestjs/common';
 import { Note } from './note.entity';
-import { NoteRequest } from './note-request';
+import { NoteRequest } from './note-request.dto';
+import { INoteServiceToken } from './note.costants';
+import type { INoteService } from './note.interface';
 
 @Controller('note')
 export class NoteController {
-  constructor(private readonly noteService: NoteService) {}
+    constructor(
+    @Inject(INoteServiceToken) private readonly noteService: INoteService,
+  ) {}
 
   @Get(':id')
-  getById(id: number): Promise<Note | null> {
+  getById(@Param('id') id: number): Promise<Note | null> {
     return this.noteService.getById(id);
   }
 

@@ -20,7 +20,7 @@ export default function EditNote({ note, onSave, handleEdit, onRemove }) {
         handleEdit();
     }
 
-    const enableSubmit = note ? note.title !== title || note.text !== text : false;
+    const enableSubmit = note ? note.title !== title || note.text !== text : true;
 
     return (
         <div className="edit-note-container">

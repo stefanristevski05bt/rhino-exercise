@@ -6,7 +6,7 @@ import { I18nModule, QueryResolver } from 'nestjs-i18n';
 import * as path from 'path';
 import { NoteController } from './note/note.controller';
 import { NoteService } from './note/note.service';
-import { Note } from './note/note.entity';
+import { NoteModule } from './note/note.module';
 
 @Module({
   imports: [
@@ -30,9 +30,9 @@ import { Note } from './note/note.entity';
       },
       resolvers: [QueryResolver],
     }),
-    TypeOrmModule.forFeature([Note])
+    NoteModule
   ],
-  controllers: [AppController, NoteController],
-  providers: [AppService, NoteService],
+  controllers: [AppController],
+  providers: [AppService],
 })
 export class AppModule { }

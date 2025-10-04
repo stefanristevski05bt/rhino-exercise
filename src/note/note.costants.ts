@@ -1,0 +1,1 @@
+export const INoteServiceToken = Symbol('INoteService');
