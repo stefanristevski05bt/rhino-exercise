@@ -2,6 +2,10 @@
   "not_found": "Note with id {{id}} was not found",
   "notes": "Notes",
   "create": "Create",
+  "cancel": "Cancel",
   "submit": "Submit",
-  "remove": "Remove"
+  "remove": "Remove",
+  "couldNotGet": "Could not get notes",
+  "couldNotSave": "Could not save note",
+  "couldNotRemove": "Could not remove note"
 }

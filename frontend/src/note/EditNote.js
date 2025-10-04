@@ -33,7 +33,7 @@ export default function EditNote({ note, onSave, handleEdit, onRemove }) {
             />
             <div className="button-group">
                 <button className="button button-submit" onClick={handleSave}>{t('submit')}</button>
-                <button className="button button-cancel" onClick={handleEdit}>Cancel</button>
+                <button className="button button-cancel" onClick={handleEdit}>{t('cancel')}</button>
                 {note &&
                     <button className="button button-cancel" onClick={handleRemove}>{t('remove')}</button>
                 }

@@ -1,5 +1,7 @@
 import axios from 'axios';
 import { apiUrl } from './../constants';
+import { useTranslation } from 'react-i18next';
+const { t } = useTranslation();
 
 export const getNotes = async () => {
     try {
@@ -7,7 +9,7 @@ export const getNotes = async () => {
         return result.data;
     } catch (err) {
         console.error(err);
-        alert('Could not get notes');
+        alert(t('couldNotGet'));
     }
 }
 
@@ -17,7 +19,7 @@ export const saveNote = async (note) => {
         return result.data;
     } catch (err) {
         console.error(err);
-        alert('Could not save note');
+        alert(t('couldNotSave'));
     }
 };
 
@@ -27,6 +29,6 @@ export const removeNote = async (id) => {
         return result.data;
     } catch (err) {
         console.error(err);
-        alert('Could not save note');
+        alert(t('couldNotRemove'));
     }
 };
