@@ -1,0 +1,7 @@
+{
+  "not_found": "Note with id {{id}} was not found",
+  "notes": "Notes",
+  "create": "Create",
+  "submit": "Submit",
+  "remove": "Remove"
+}
